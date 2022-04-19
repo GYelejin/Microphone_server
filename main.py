@@ -6,11 +6,10 @@ logging.basicConfig(filename="server.log",
                     level=logging.INFO,
                     format='%(asctime)s %(levelname)s:%(message)s')
 
-BUFFSIZE = config["BUFFSIZE"]
-
 with open("appsettings.json", "r") as read_file:
     config = json.load(read_file)
 
+BUFFSIZE = config["BUFFSIZE"]
 
 def printlog(message):
     print(message)
