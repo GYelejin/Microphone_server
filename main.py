@@ -61,7 +61,7 @@ class TcpServer:
                 data = conn.recv(config["BUFFSIZE"])
                 if not data:
                     return
-                data = data.decode()
+                #ata = data.decode()
                 print('Received data: ' + data)
                 reply = 'OK: ' + data
                 conn.send(reply.encode())
