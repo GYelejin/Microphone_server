@@ -16,6 +16,8 @@ logging.basicConfig(filename="server.log",
 
 with open("appsettings.json", "r") as read_file:
     config = json.load(read_file)
+
+
 class TcpServer:
 
     def __init__(self, port, family_addr, persist=False):
@@ -62,7 +64,7 @@ class TcpServer:
                 if not data:
                     return
                 #ata = data.decode()
-                print('Received data: ' + data)
+                print('Received data: ', data)
                 reply = 'OK: ' + data
                 conn.send(reply.encode())
                 conn.close()
@@ -73,7 +75,6 @@ class TcpServer:
                 break
 
 
-
 def printlog(message):
     print(message)
     logging.info(message)
@@ -82,6 +83,7 @@ def printlog(message):
 def main():
     with TcpServer(config["PORT"], family_addr=socket.AF_INET, persist=True) as s:
         print(input('Press Enter stop the server...'))
-    
+
+
 if __name__ == "__main__":
     main()
