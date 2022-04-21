@@ -66,7 +66,7 @@ class TcpServer:
                 #ata = data.decode()
                 print('Received data: ', data)
                 reply = data
-                conn.send(reply.encode())
+                conn.send(reply)
                 conn.close()
             except socket.error as e:
                 print('Running server failed:{}'.format(e))
