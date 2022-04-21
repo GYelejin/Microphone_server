@@ -65,7 +65,7 @@ class TcpServer:
                     return
                 #ata = data.decode()
                 print('Received data: ', data)
-                reply = 'OK: ', data
+                reply = data
                 conn.send(reply.encode())
                 conn.close()
             except socket.error as e:
